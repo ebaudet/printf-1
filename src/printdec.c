@@ -7,9 +7,18 @@ int		printdec(t_flag *flag, va_list args)
 	nb = va_arg(args, int);
 	rslt = count_number(nb) < flag->width ? flag->width : count_number(nb);
 
-	if (flag->width > count_number(nb))
-		ft_printf_space(flag->width  - count_number(nb));
-	ft_putnbr(nb);
+	if (flag->flag == '-')
+	{
+		ft_putnbr(nb);
+		ft_printf_space(flag->width  - count_number(nb), flag->flag);
+	}
+	else
+	{
+		ft_printf_space(flag->width  - count_number(nb), flag->flag);
+		ft_putnbr(nb);
+	}
+	//if (flag->width > count_number(nb))
+
 	return (rslt);
 }
 
@@ -44,14 +53,17 @@ void    ft_putnbr(int n)
 	}
 }
 
-void	ft_printf_space(int	n)
+void	ft_printf_space(int	n, int zero)
 {
 	int		i;
 
 	i = 0;
 	while (i < n)
 	{
-		ft_putchar(' ');
+		if (zero)
+			ft_putchar('0');
+		else
+			ft_putchar(' ');
 		i++;
 	}
 }
