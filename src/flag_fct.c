@@ -25,6 +25,10 @@ void	putflag(char **str, t_flag *flag)
 			flag->plus = 1;
 		(*str)++;
 	}
+	if (flag->minus)
+		flag->zero = 0;
+	if (flag->plus)
+		flag->space = 0;
 }
 
 int		isflag(char c)
