@@ -32,6 +32,7 @@ typedef	enum
 
 typedef struct	s_flag
 {
+	char	length;
 	char	specifier;
 	char	flag;
 	int		width;
@@ -49,7 +50,7 @@ typedef int (*funptr)(t_flag *, va_list);
 /*
 ** ft_printf.c
 */
-int		ft_printf(char *str, ...);
+int		ft_printf(char *str, ...)__attribute__((format(printf, 1, 2)));
 
 /*
 ** fonction_libft.c
@@ -91,6 +92,7 @@ int		isspecifier(char c);
 void	putspecifier(char **str, t_flag *flag);
 t_spec	*init_spec(char c, t_spec_enum s);
 t_spec	**init_specs(void);
+int		matchlengthspec(t_flag *flag);
 
 /*
 ** printf_fct.c
@@ -100,6 +102,12 @@ int		print_string(char **str);
 int		print_arg(char **str, va_list args);
 int		print_arg_flag(t_flag *flag, va_list args);
 funptr	*init_fun_tab(void);
+
+/*
+** length_fct.c
+*/
+void	putlength(char **str, t_flag *flag);
+int		islength(char c);
 
 /*
 ** other.c
