@@ -6,7 +6,7 @@
 #    By: lfouquet <lfouquet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/16 15:18:10 by lfouquet          #+#    #+#              #
-#    Updated: 2013/12/20 15:37:26 by lfouquet         ###   ########.fr        #
+#    Updated: 2013/12/20 18:22:48 by sboeuf           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ PATH_SRC = src
 
 SRC = 	ft_printf.c flag_fct.c fonction_libft.c \
 		other.c precision_fct.c printf_fct.c	\
-		specifier_fct.c	width_fct.c
+		specifier_fct.c width_fct.c length_fct.c
 
 OBJ = $(patsubst %.c, $(PATH_OBJ)/%.o, $(SRC))
 
