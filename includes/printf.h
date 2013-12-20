@@ -4,6 +4,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
+# include <wchar.h>
 # include <stdio.h> /* A RETIRER */
 
 # define TYPESNUM 18
@@ -27,14 +28,20 @@ typedef	enum
 	STRING,
 	POINTER,
 	NOTHING,
-	PERCENT
+	PERCENT,
+	LONGCHAR,
+	LONGSTRING
 }	t_spec_enum;
 
 typedef struct	s_flag
 {
 	char	length;
 	char	specifier;
-	char	flag;
+	int		sharp;
+	int		zero;
+	int		space;
+	int		minus;
+	int		plus;
 	int		width;
 	int		precision;
 }		t_flag;
@@ -138,7 +145,7 @@ int		printstr(t_flag *flag, va_list args);
 int		printpointer(t_flag *flag, va_list args);
 int		printnothing(t_flag *flag, va_list args);
 int		printpercent(t_flag *flag, va_list args);
-
-
+int		printlongchar(t_flag *flag, va_list args);
+int		printlongstring(t_flag *flag, va_list args);
 
 #endif /* !PRINTF_H */

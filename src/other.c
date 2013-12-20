@@ -219,3 +219,27 @@ int		printpercent(t_flag *flag, va_list args)
 	write(1, "%", 1);
 	return (rslt);
 }
+
+int		printlongchar(t_flag *flag, va_list args)
+{
+	wint_t	c;
+	int		rslt;
+
+	c = (wint_t)va_arg(args, int);
+	rslt = 0;
+	//TODO
+	flag = flag;
+	return (rslt);
+}
+
+int		printlongstring(t_flag *flag, va_list args)
+{
+	wchar_t	*s;
+	int		rslt;
+
+	s = (wchar_t*)va_arg(args, char*);
+	rslt = 0;
+	//TODO
+	flag = flag;
+	return (rslt);
+}

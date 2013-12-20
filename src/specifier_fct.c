@@ -16,7 +16,7 @@ void	putspecifier(char **str, t_flag *flag)
 
 int		isspecifier(char c)
 {
-	return (c == 'd' || c == 'i' || c == 'u' || c == 'o' || c == 'x' || c == 'X' || c == 'f' || c == 'F' || c == 'e' || c == 'E' || c == 'g' || c == 'G' || c == 'a' || c == 'A' || c == 'c' || c == 's' || c == 'p' || c == 'n' || c == '%');
+	return (c == 'd' || c == 'i' || c == 'u' || c == 'o' || c == 'x' || c == 'X' || c == 'f' || c == 'F' || c == 'e' || c == 'E' || c == 'g' || c == 'G' || c == 'a' || c == 'A' || c == 'c' || c == 's' || c == 'p' || c == 'n' || c == '%' || c == 'C' || c == 'S');
 }
 
 t_spec	*init_spec(char c, t_spec_enum s)
