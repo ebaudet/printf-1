@@ -1,17 +1,5 @@
 #include "../includes/printf.h"
 
-int		printdec(t_flag *flag, va_list args)
-{
-	int	nb;
-	int	rslt;
-	nb = va_arg(args, int);
-	rslt = 0;
-	printf("%d\n",nb);
-	flag = flag;
-	nb = nb;
-	return (rslt);
-}
-
 int		printudec(t_flag *flag, va_list args)
 {
 	unsigned int	nb;

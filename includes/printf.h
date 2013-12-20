@@ -112,8 +112,15 @@ int		islength(char c);
 /*
 ** other.c
 */
-int		ft_printf(char *str, ...);
 int		printdec(t_flag *flag, va_list args);
+int 	count_number(int n);
+void    ft_putnbr(int n);
+void	ft_printf_space(int	n);
+
+/*
+** other.c
+*/
+int		ft_printf(char *str, ...);
 int		printudec(t_flag *flag, va_list args);
 int		printoct(t_flag *flag, va_list args);
 int		printhex(t_flag *flag, va_list args);
