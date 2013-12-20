@@ -27,7 +27,6 @@ typedef	enum
 	CHAR,
 	STRING,
 	POINTER,
-	NOTHING,
 	PERCENT,
 	LONGCHAR,
 	LONGSTRING
@@ -120,9 +119,9 @@ int		islength(char c);
 ** other.c
 */
 int		printdec(t_flag *flag, va_list args);
-int 	count_number(int n);
-void    ft_putnbr(int n);
-void	ft_printf_space(int	n);
+int 	nbchar(int n);
+void	ft_putnbr(int n);
+void	ft_printf_space(int	n, int zero);
 
 /*
 ** other.c
@@ -143,7 +142,6 @@ int		printhexfloatu(t_flag *flag, va_list args);
 int		printchar(t_flag *flag, va_list args);
 int		printstr(t_flag *flag, va_list args);
 int		printpointer(t_flag *flag, va_list args);
-int		printnothing(t_flag *flag, va_list args);
 int		printpercent(t_flag *flag, va_list args);
 int		printlongchar(t_flag *flag, va_list args);
 int		printlongstring(t_flag *flag, va_list args);

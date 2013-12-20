@@ -51,7 +51,6 @@ t_spec	**init_specs(void)
 	specs[14] = init_spec('c',CHAR);
 	specs[15] = init_spec('s',STRING);
 	specs[16] = init_spec('p',POINTER);
-	specs[17] = init_spec('n',NOTHING);
-	specs[18] = init_spec('%',PERCENT);
+	specs[17] = init_spec('%',PERCENT);
 	return (specs);
 }

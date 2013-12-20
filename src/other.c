@@ -162,11 +162,18 @@ int		printchar(t_flag *flag, va_list args)
 	char	c;
 	int		rslt;
 
+	rslt = flag->width > 1 ? flag->width : 1;
 	c = (char)va_arg(args, int);
-	rslt = 1;
-	//TODO
-	flag = flag;
-	c = c;
+	if (flag->minus)
+	{
+		ft_putchar(c);
+		ft_printf_space(flag->width - 1, flag->zero);
+	}
+	else
+	{
+		ft_printf_space(flag->width - 1, flag->zero);
+		ft_putchar(c);
+	}
 	return (rslt);
 }
 
@@ -176,9 +183,17 @@ int		printstr(t_flag *flag, va_list args)
 	int		rslt;
 
 	s = va_arg(args, char*);
-	rslt = 0;
-	//TODO
-	flag = flag;
+	rslt = flag->width > (int)ft_strlen(s) ? flag->width : (int)ft_strlen(s);
+	if (flag->minus)
+	{
+		ft_putstr(s);
+		ft_printf_space(flag->width - ft_strlen(s), flag->zero);
+	}
+	else
+	{
+		ft_printf_space(flag->width - ft_strlen(s), flag->zero);
+		ft_putstr(s);
+	}
 	s = s;
 	return (rslt);
 }
@@ -198,12 +213,11 @@ int		printpointer(t_flag *flag, va_list args)
 
 int		printnothing(t_flag *flag, va_list args)
 {
-	intptr_t	ptr;
-	int		rslt;
+	int	*ptr;
+	int	rslt;
 
-	ptr = va_arg(args, intptr_t);
+	ptr = va_arg(args, int*);
 	rslt = 0;
-	//TODO
 	flag = flag;
 	ptr = ptr;
 	return (rslt);
@@ -211,13 +225,10 @@ int		printnothing(t_flag *flag, va_list args)
 
 int		printpercent(t_flag *flag, va_list args)
 {
-	int	rslt;
-
 	flag = flag;
 	args = args;
-	rslt = 1;
 	write(1, "%", 1);
-	return (rslt);
+	return (1);
 }
 
 int		printlongchar(t_flag *flag, va_list args)

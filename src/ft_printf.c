@@ -9,7 +9,13 @@ int		ft_printf(char *str, ...)
 	va_start(args, str);
 	while (*str)
 	{
-		rslt += print_next_string(&str, args);
+		if (*str != '%' || *(str + 1) != 'n')
+			rslt += print_next_string(&str, args);
+		else
+		{
+			*va_arg(args, int*) = rslt;
+			str += 2;
+		}
 	}
 	va_end(args);
 	return (rslt);
