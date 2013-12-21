@@ -139,11 +139,15 @@ int		printoct(t_flag *flag, va_list args);
 int 	ft_putuoct(unsigned int n, int i);
 
 /*
+** printhex.c
+*/
+int		printhex(t_flag *flag, va_list args);
+int 	ft_putuhex(unsigned int nb, int i, int lowercase);
+
+/*
 ** other.c
 */
 int		ft_printf(char *str, ...);
-int		printudec(t_flag *flag, va_list args);
-int		printoct(t_flag *flag, va_list args);
 int		printhex(t_flag *flag, va_list args);
 int		printhexu(t_flag *flag, va_list args);
 int		printfloat(t_flag *flag, va_list args);
