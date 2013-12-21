@@ -1,6 +1,6 @@
 #include "../includes/printf.h"
 
-void	putwidth(char **str, t_flag *flag)
+void	putwidth(const char **str, t_flag *flag)
 {
 	if (iswidth(**str))
 		flag->width = getwidth(str);
@@ -11,11 +11,11 @@ int		iswidth(char c)
 	return (ft_isdigit(c) || c == '*');
 }
 
-int		getwidth(char **str)
+int		getwidth(const char **str)
 {
-	int	rslt;
-	char	*snbr;
-	int	i;
+	int			rslt;
+	const char	*snbr;
+	int			i;
 
 	if(!(ft_isdigit(**str)))
 	{

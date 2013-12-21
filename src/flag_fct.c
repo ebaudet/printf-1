@@ -1,6 +1,6 @@
 #include "../includes/printf.h"
 
-void	getflag(char **str, t_flag *flag)
+void	getflag(const char **str, t_flag *flag)
 {
 	putflag(str, flag);
 	putwidth(str, flag);
@@ -9,7 +9,7 @@ void	getflag(char **str, t_flag *flag)
 	putspecifier(str, flag);
 }
 
-void	putflag(char **str, t_flag *flag)
+void	putflag(const char **str, t_flag *flag)
 {
 	while (isflag(**str))
 	{

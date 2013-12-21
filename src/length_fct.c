@@ -1,6 +1,6 @@
 #include "../includes/printf.h"
 
-void	putlength(char **str, t_flag *flag)
+void	putlength(const char **str, t_flag *flag)
 {
 	if (islength(**str))
 	{

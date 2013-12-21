@@ -56,7 +56,7 @@ typedef int (*funptr)(t_flag *, va_list);
 /*
 ** ft_printf.c
 */
-int		ft_printf(char *str, ...)__attribute__((format(printf, 1, 2)));
+int		ft_printf(const char *format, ...)__attribute__((format(printf, 1, 2)));
 
 /*
 ** fonction_libft.c
@@ -76,28 +76,28 @@ void	ft_putchar(char c);
 */
 t_flag	*init_flag(void);
 int		isflag(char c);
-void	getflag(char **str, t_flag *flag);
-void	putflag(char **str, t_flag *flag);
+void	getflag(const char **str, t_flag *flag);
+void	putflag(const char **str, t_flag *flag);
 
 /*
 ** precision_fct.c
 */
-int		getprecision(char **str);
+int		getprecision(const char **str);
 int		isprecision(char c);
-void	putprecision(char **str, t_flag *flag);
+void	putprecision(const char **str, t_flag *flag);
 
 /*
 ** width_fct.c
 */
-int		getwidth(char **str);
+int		getwidth(const char **str);
 int		iswidth(char c);
-void	putwidth(char **str, t_flag *flag);
+void	putwidth(const char **str, t_flag *flag);
 
 /*
 ** specifier_fct.c
 */
 int		isspecifier(char c);
-void	putspecifier(char **str, t_flag *flag);
+void	putspecifier(const char **str, t_flag *flag);
 t_spec	*init_spec(char c, t_spec_enum s);
 t_spec	**init_specs(void);
 int		matchlengthspec(t_flag *flag);
@@ -105,16 +105,16 @@ int		matchlengthspec(t_flag *flag);
 /*
 ** printf_fct.c
 */
-int		print_next_string(char **str, va_list args);
-int		print_string(char **str);
-int		print_arg(char **str, va_list args);
+int		print_next_string(const char **str, va_list args);
+int		print_string(const char **str);
+int		print_arg(const char **str, va_list args);
 int		print_arg_flag(t_flag *flag, va_list args);
 funptr	*init_fun_tab(void);
 
 /*
 ** length_fct.c
 */
-void	putlength(char **str, t_flag *flag);
+void	putlength(const char **str, t_flag *flag);
 int		islength(char c);
 
 /*
@@ -220,14 +220,5 @@ int		printlongchar(t_flag *flag, va_list args);
 ** printlongstring.c
 */
 int		printlongstring(t_flag *flag, va_list args);
-
-
-
-/*
-** other.c
-*/
-int		ft_printf(char *str, ...);
-
-
 
 #endif /* !PRINTF_H */

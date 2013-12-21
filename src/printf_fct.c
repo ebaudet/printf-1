@@ -1,6 +1,6 @@
 #include "../includes/printf.h"
 
-int		print_next_string(char **str, va_list args)
+int		print_next_string(const char **str, va_list args)
 {
 	int	rslt;
 
@@ -11,7 +11,7 @@ int		print_next_string(char **str, va_list args)
 	return (rslt);
 }
 
-int		print_string(char **str)
+int		print_string(const char **str)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ int		print_string(char **str)
 	return (i);
 }
 
-int		print_arg(char **str, va_list args)
+int		print_arg(const char **str, va_list args)
 {
 	int	rslt;
 	t_flag	*flag;

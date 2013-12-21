@@ -1,6 +1,6 @@
 #include "../includes/printf.h"
 
-void	putspecifier(char **str, t_flag *flag)
+void	putspecifier(const char **str, t_flag *flag)
 {
 	if (isspecifier(**str))
 	{

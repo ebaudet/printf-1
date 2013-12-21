@@ -1,20 +1,20 @@
 #include "../includes/printf.h"
 
-int		ft_printf(char *str, ...)
+int		ft_printf(const char *format, ...)
 {
 	va_list args;
 	int	rslt;
 
 	rslt = 0;
-	va_start(args, str);
-	while (*str)
+	va_start(args, format);
+	while (*format)
 	{
-		if (*str != '%' || *(str + 1) != 'n')
-			rslt += print_next_string(&str, args);
+		if (*format != '%' || *(format + 1) != 'n')
+			rslt += print_next_string(&format, args);
 		else
 		{
 			*va_arg(args, int*) = rslt;
-			str += 2;
+			format += 2;
 		}
 	}
 	va_end(args);
