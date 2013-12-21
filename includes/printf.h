@@ -118,12 +118,19 @@ void	putlength(char **str, t_flag *flag);
 int		islength(char c);
 
 /*
-** other.c
+** printdec.c
 */
 int		printdec(t_flag *flag, va_list args);
 int 	nbchar(int n);
 void	ft_putnbr(int n);
 void	ft_printf_space(int	n, int zero);
+
+/*
+** printudec.c
+*/
+int		printudec(t_flag *flag, va_list args);
+int 	nbuchar(unsigned int n);
+void	ft_putunbr(unsigned int n);
 
 /*
 ** other.c

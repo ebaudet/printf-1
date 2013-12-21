@@ -9,29 +9,24 @@ int		printdec(t_flag *flag, va_list args)
 	nb = va_arg(args, int);
 	size = nbchar(nb) + flag->space + flag->plus;
 	rslt = size < flag->width ? flag->width : size;
+	if (flag->plus && nb > 0)
+		ft_putchar('+');
+	if (!flag->plus && flag->space && nb > 0)
+		ft_putchar(' ');
 	if (flag->minus)
 	{
-		if (flag->plus && nb > 0)
-			ft_putchar('+');
-		if (!flag->plus && flag->space && nb > 0)
-			ft_putchar(' ');
 		ft_putnbr(nb);
-		ft_printf_space(flag->width  - size, flag->zero);
+		ft_printf_space(flag->width - size, flag->zero);
 	}
 	else
 	{
-		if (flag->plus && nb > 0)
-			ft_putchar('+');
-		if (!flag->plus && flag->space && nb > 0)
-			ft_putchar(' ');
-		ft_printf_space(flag->width  - size, flag->zero);
+		ft_printf_space(flag->width - size, flag->zero);
 		ft_putnbr(nb);
 	}
-
 	return (rslt);
 }
 
-int 	nbchar(int n)
+int		nbchar(int n)
 {
 	if (n == 2147483647 || n == -2147483648)
 		return (10);
@@ -41,7 +36,7 @@ int 	nbchar(int n)
 		return (1 + nbchar(n / 10));
 }
 
-void    ft_putnbr(int n)
+void	ft_putnbr(int n)
 {
 	if (n == -2147483648)
 		ft_putstr("-2147483648");
