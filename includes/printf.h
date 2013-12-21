@@ -138,27 +138,94 @@ void	ft_putunbr(unsigned int n);
 int		printoct(t_flag *flag, va_list args);
 int 	ft_putuoct(unsigned int n, int i);
 
+
+/*
+** printhex.c
+*/
+int		printhex(t_flag *flag, va_list args);
+
+/*
+** printhexu.c
+*/
+int		printhexu(t_flag *flag, va_list args);
+
+/*
+** printfloat.c
+*/
+int		printfloat(t_flag *flag, va_list args);
+
+/*
+** printfloatu.c
+*/
+int		printfloatu(t_flag *flag, va_list args);
+
+/*
+** printscient.c
+*/
+int		printscient(t_flag *flag, va_list args);
+
+/*
+** printscientu.c
+*/
+int		printscientu(t_flag *flag, va_list args);
+
+/*
+** printshort.c
+*/
+int		printshort(t_flag *flag, va_list args);
+
+/*
+** printshortu.c
+*/
+int		printshortu(t_flag *flag, va_list args);
+
+/*
+** printhexfloat.c
+*/
+int		printhexfloat(t_flag *flag, va_list args);
+
+/*
+** printhexfloatu.c
+*/
+int		printhexfloatu(t_flag *flag, va_list args);
+
+/*
+** printchar.c
+*/
+int		printchar(t_flag *flag, va_list args);
+
+/*
+** printstr.c
+*/
+int		printstr(t_flag *flag, va_list args);
+
+/*
+** printpointer.c
+*/
+int		printpointer(t_flag *flag, va_list args);
+
+/*
+** printpercent.c
+*/
+int		printpercent(t_flag *flag, va_list args);
+
+/*
+** printlongchar.c
+*/
+int		printlongchar(t_flag *flag, va_list args);
+
+/*
+** printlongstring.c
+*/
+int		printlongstring(t_flag *flag, va_list args);
+
+
+
 /*
 ** other.c
 */
 int		ft_printf(char *str, ...);
-int		printudec(t_flag *flag, va_list args);
-int		printoct(t_flag *flag, va_list args);
-int		printhex(t_flag *flag, va_list args);
-int		printhexu(t_flag *flag, va_list args);
-int		printfloat(t_flag *flag, va_list args);
-int		printfloatu(t_flag *flag, va_list args);
-int		printscient(t_flag *flag, va_list args);
-int		printscientu(t_flag *flag, va_list args);
-int		printshort(t_flag *flag, va_list args);
-int		printshortu(t_flag *flag, va_list args);
-int		printhexfloat(t_flag *flag, va_list args);
-int		printhexfloatu(t_flag *flag, va_list args);
-int		printchar(t_flag *flag, va_list args);
-int		printstr(t_flag *flag, va_list args);
-int		printpointer(t_flag *flag, va_list args);
-int		printpercent(t_flag *flag, va_list args);
-int		printlongchar(t_flag *flag, va_list args);
-int		printlongstring(t_flag *flag, va_list args);
+
+
 
 #endif /* !PRINTF_H */
