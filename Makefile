@@ -6,7 +6,7 @@
 #    By: lfouquet <lfouquet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/16 15:18:10 by lfouquet          #+#    #+#              #
-#    Updated: 2013/12/21 15:22:53 by lfouquet         ###   ########.fr        #
+#    Updated: 2013/12/21 16:37:30 by sboeuf           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRC = 	flag_fct.c fonction_libft.c ft_printf.c length_fct.c 				\
 		printhexfloatu.c printhexu.c printlongchar.c printlongstring.c 		\
 		printoct.c printpercent.c printpointer.c printscient.c 				\
 		printscientu.c printshort.c printshortu.c printstr.c 				\
-		specifier_fct.c width_fct.c printudec.c
+		specifier_fct.c width_fct.c printudec.c printuhex.c printuhexu.c	\
 
 OBJ = $(patsubst %.c, $(PATH_OBJ)/%.o, $(SRC))
 

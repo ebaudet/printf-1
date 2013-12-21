@@ -144,7 +144,7 @@ int 	ft_putuoct(unsigned int n, int i);
 */
 
 int		printhex(t_flag *flag, va_list args);
-int 	ft_putuhex(unsigned int nb, int i, int lowercase);
+int 	ft_puthex(unsigned int nb, int i, int lowercase);
 
 /*
 ** printhexu.c
@@ -191,6 +191,7 @@ int		printhexfloat(t_flag *flag, va_list args);
 */
 int		printhexfloatu(t_flag *flag, va_list args);
 
+int 	ft_puthex(unsigned int nb, int i, int lowercase);
 /*
 ** printchar.c
 */
@@ -220,5 +221,17 @@ int		printlongchar(t_flag *flag, va_list args);
 ** printlongstring.c
 */
 int		printlongstring(t_flag *flag, va_list args);
+
+/*
+** printuhex.c
+*/
+int		printuhex(t_flag *flag, va_list args);
+int 	ft_putuhex(long unsigned int nb, int i, int lowercase);
+
+/*
+** printuhexu.c
+*/
+int		printuhexu(t_flag *flag, va_list args);
+int 	ft_putuhex(long unsigned int nb, int i, int lowercase);
 
 #endif /* !PRINTF_H */

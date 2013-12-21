@@ -6,25 +6,30 @@ int		printhex(t_flag *flag, va_list args)
 	int				rslt;
 	int				size;
 
-	nb = va_arg(args, unsigned int);
-	if (flag->sharp)
-		ft_putstr("0x");
-	if (flag->minus)
-	{
-		size = ft_putuhex(nb, 0, 1);
-		ft_printf_space(flag->width - size, flag->zero);
-	}
+	if (flag->length == 'l')
+		return (printuhex(flag, args));
 	else
 	{
-		ft_printf_space(flag->width - size, flag->zero);
-		size = ft_putuhex(nb, 0, 1);
+		nb = va_arg(args, unsigned int);
+		if (flag->sharp)
+			ft_putstr("0x");
+		if (flag->minus)
+		{
+			size = ft_puthex(nb, 0, 1);
+			ft_printf_space(flag->width - size, flag->zero);
+		}
+		else
+		{
+			ft_printf_space(flag->width - size, flag->zero);
+			size = ft_puthex(nb, 0, 1);
+		}
+		size += (flag->sharp * 2);
+		rslt = size < flag->width ? flag->width : size;
+		return (rslt);
 	}
-	size += (flag->sharp * 2);
-	rslt = size < flag->width ? flag->width : size;
-	return (rslt);
 }
 
-int		ft_putuhex(unsigned int nb, int i, int lowercase)
+int		ft_puthex(unsigned int nb, int i, int lowercase)
 {
 	int	l;
 
@@ -42,8 +47,8 @@ int		ft_putuhex(unsigned int nb, int i, int lowercase)
 	}
 	else
 	{
-		i = ft_putuhex(nb / 16, i, lowercase);
-		ft_putuhex(nb % 16, i, lowercase);
+		i = ft_puthex(nb / 16, i, lowercase);
+		ft_puthex(nb % 16, i, lowercase);
 	}
 	return (i);
 }

@@ -2,13 +2,12 @@
 
 int		printpointer(t_flag *flag, va_list args)
 {
-	intptr_t	address;
-	int		rslt;
+	int					rslt;
+	void				*addr;
 
-	address = va_arg(args, intptr_t);
-	rslt = 0;
-	//TODO
+	addr = va_arg(args, void *);
 	flag = flag;
-	address = address;
+	ft_putstr("0x");
+	rslt = ft_putuhex((long unsigned int)addr, 0, 1) + 4;
 	return (rslt);
 }
