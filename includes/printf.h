@@ -133,6 +133,12 @@ int 	nbuchar(unsigned int n);
 void	ft_putunbr(unsigned int n);
 
 /*
+** printoct.c
+*/
+int		printoct(t_flag *flag, va_list args);
+int 	ft_putuoct(unsigned int n, int i);
+
+/*
 ** other.c
 */
 int		ft_printf(char *str, ...);
