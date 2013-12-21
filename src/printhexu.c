@@ -7,10 +7,8 @@ int		printhexu(t_flag *flag, va_list args)
 	int				size;
 
 	nb = va_arg(args, unsigned int);
-	if (flag->plus)
-		ft_putchar('+');
-	if (!flag->plus && flag->space)
-		ft_putchar(' ');
+	if (flag->sharp)
+		ft_putstr("0X");
 	if (flag->minus)
 	{
 		size = ft_putuhex(nb, 0, 0);
@@ -21,7 +19,7 @@ int		printhexu(t_flag *flag, va_list args)
 		ft_printf_space(flag->width - size, flag->zero);
 		size = ft_putuhex(nb, 0, 0);
 	}
-	size += flag->space + flag->plus;
+	size += (flag->sharp * 2);
 	rslt = size < flag->width ? flag->width : size;
 	return (rslt);
 }
