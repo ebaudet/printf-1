@@ -142,7 +142,9 @@ int 	ft_putuoct(unsigned int n, int i);
 /*
 ** printhex.c
 */
+
 int		printhex(t_flag *flag, va_list args);
+int 	ft_putuhex(unsigned int nb, int i, int lowercase);
 
 /*
 ** printhexu.c
