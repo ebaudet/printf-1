@@ -10,6 +10,15 @@ size_t	ft_strlen (const char *s)
 	return (i);
 }
 
+size_t	ft_wstrlen (const wchar_t *s)
+{
+	long unsigned int	i;
+
+	i = 0;
+	while (*s++)
+		i++;
+	return (i);
+}
 int	ft_isdigit(int c)
 {
 	if ((unsigned int)c >= '0' && (unsigned int)c <= '9')
@@ -56,6 +65,18 @@ void	ft_putstr(char const *s)
 {
 	if (s != NULL)
 		write(1, s, ft_strlen(s));
+}
+
+void	ft_putwstr(wchar_t const *s)
+{
+	if (s != NULL)
+	{
+		while (*s != 0)
+		{
+			ft_putchar(*s);
+			s++;
+		}
+	}
 }
 
 char	*ft_strncpy(char *s1, const char *s2, size_t n)

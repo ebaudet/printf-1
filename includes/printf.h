@@ -7,7 +7,7 @@
 # include <wchar.h>
 # include <stdio.h> /* A RETIRER */
 
-# define TYPESNUM 18
+# define TYPESNUM 20
 
 typedef	enum
 {
@@ -62,10 +62,12 @@ int		ft_printf(char *str, ...)__attribute__((format(printf, 1, 2)));
 ** fonction_libft.c
 */
 size_t	ft_strlen (const char *s);
+size_t	ft_wstrlen (const wchar_t *s);
 char	*ft_strndup(const char *s1, size_t n);
 int		ft_atoi(const char *str);
 int		ft_isdigit(int c);
 void	ft_putstr(char const *s);
+void	ft_putwstr(wchar_t const *s);
 char	*ft_strncpy(char *s1, const char *s2, size_t n);
 void	ft_putchar(char c);
 

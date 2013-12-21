@@ -78,7 +78,9 @@ funptr	*init_fun_tab(void)
 		printchar,
 		printstr,
 		printpointer,
-		printpercent
+		printpercent,
+		printlongchar,
+		printlongstring
 	};
 	return (printfunctions);
 }

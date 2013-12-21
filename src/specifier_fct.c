@@ -16,7 +16,11 @@ void	putspecifier(char **str, t_flag *flag)
 
 int		isspecifier(char c)
 {
-	return (c == 'd' || c == 'i' || c == 'u' || c == 'o' || c == 'x' || c == 'X' || c == 'f' || c == 'F' || c == 'e' || c == 'E' || c == 'g' || c == 'G' || c == 'a' || c == 'A' || c == 'c' || c == 's' || c == 'p' || c == 'n' || c == '%' || c == 'C' || c == 'S');
+	return (c == 'd' || c == 'i' || c == 'u' || c == 'o' || c == 'x' ||
+			c == 'X' || c == 'f' || c == 'F' || c == 'e' || c == 'E' ||
+			c == 'g' || c == 'G' || c == 'a' || c == 'A' || c == 'c' ||
+			c == 's' || c == 'p' || c == 'n' || c == '%' || c == 'C' ||
+			c == 'S');
 }
 
 t_spec	*init_spec(char c, t_spec_enum s)
@@ -52,5 +56,7 @@ t_spec	**init_specs(void)
 	specs[15] = init_spec('s',STRING);
 	specs[16] = init_spec('p',POINTER);
 	specs[17] = init_spec('%',PERCENT);
+	specs[18] = init_spec('C',LONGCHAR);
+	specs[19] = init_spec('S',LONGSTRING);
 	return (specs);
 }
